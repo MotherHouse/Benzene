@@ -1,0 +1,43 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <head>
+    <body>
+      <div class="alert alert-success">
+      <h1>增加怪物</h1>
+      </div>
+
+
+          <form action="addmonster.php" method="post">
+          <label>怪物名称</label>
+          <input class="form-control" name="name">
+          <p class="help-block"></p>
+          <label>怪物生命值</label>
+          <input class="form-control" name="life" >
+          <p class="help-block"></p>
+          <label>怪物法力值</label>
+          <input class="form-control" name="soul" >
+          <p class="help-block"></p>
+          <label>怪物攻击力</label>
+          <input class="form-control" name="monster_attack" >
+          <p class="help-block"></p>
+          <label>怪物防御力</label>
+          <input class="form-control" name="monster_defence" >
+          <p class="help-block"></p>
+          <label>怪物等级</label>
+          <input class="form-control" name="monster_level" >
+          <p class="help-block"></p>
+
+          <div class="panel-body">
+      <input type="submit" class="btn btn-info btn-lg" value="增加怪物">
+        </div>
+      </form>
+
+
+
+    </body>
+</html>

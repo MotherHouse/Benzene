@@ -1,0 +1,31 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="selectuser.js"></script>
+</head>
+<body>
+  <div class="alert alert-success">
+  <h1>初始数值</h1>
+  </div>
+
+<form>
+<select class="form-control" name="users" onchange="showUser(this.value)">
+<option value="1">天道</option>
+<option value="2">阿修罗道</option>
+<option value="3">人道</option>
+<option value="4">畜生道</option>
+<option value="5">饿鬼道</option>
+<option value="6">地狱道</option>
+</select>
+</form>
+
+<p>
+<div id="txtHint"><b>User info will be listed here.</b></div>
+</p>
+
+</body>
+</html>

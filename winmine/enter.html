@@ -1,0 +1,43 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <head>
+    <body>
+      <div class="alert alert-success">
+      <h1>你好，新的玩家。</h1>
+      </div>
+
+          <label>请输入你的名字</label>
+          <form action="enter.php" method="post">
+          <input class="form-control" name="username">
+          <p class="help-block">一旦选定名字将无法改变</p>
+          <label>请输入你的密码</label>
+          <input class="form-control" name="psd" >
+          <p class="help-block"> 确定你以后登录的唯一验证密码</p>
+
+
+      <label>请选择你的道</label>
+      <label for="disabledSelect"></label>
+      <select class="form-control" name="job">
+          <option value="天道">天道（群伤，治疗）</option>
+          <option value="阿修罗道">阿修罗道（爆发，控制）</option>
+          <option value="人道">人道（控制，解控）</option>
+          <option value="畜生道">畜生道（肉盾，辅助）</option>
+          <option value="饿鬼道">饿鬼道（吸血，再生）</option>
+          <option value="地狱道">地狱道（控制，群伤)</option>）
+      </select>
+
+
+        <div class="panel-body">
+      <input type="submit" class="btn btn-info btn-lg" value="进入世界">
+        </div>
+      </form>
+
+
+
+    </body>
+</html>
