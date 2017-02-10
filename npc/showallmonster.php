@@ -12,14 +12,14 @@
   </div>
   <div class="table-responsive">
   <table class="table">
-  <tr><td>怪物名称</td><td>生命值</td><td>法力值</td><td>攻击力</td><td>防御力</td><td>等级</td><td>背景</td></tr>
+  <tr><td>怪物名称</td><td>生命值</td><td>法力值</td><td>攻击力</td><td>防御力</td><td>等级</td><td>击杀所得经验</td><td>技能</td><td>背景</td></tr>
 
 <?php
 
 require_once("config.php");
 $conn = connectDb();
 
-$result =$conn->query("select * from monster ;");
+$result =$conn->query("select * from monster ");
 
 
 if ($result->num_rows> 0) {
@@ -30,7 +30,10 @@ $soul=$row['soul'];
 $monster_attack=$row['monster_attack'];
 $monster_defence=$row['monster_defence'];
 $monster_level=$row['monster_level'];
-         echo "<tr><td>$name</td><td>$life</td><td>$soul</td><td>$monster_attack</td><td>$monster_defence</td><td>$monster_level</td></tr>";
+$monster_exp=$row['monster_exp'];
+$monster_skill=$row['monster_skill'];
+$monster_story=$row['monster_story'];
+         echo "<tr><td>$name</td><td>$life</td><td>$soul</td><td>$monster_attack</td><td>$monster_defence</td><td>$monster_level</td><td>$monster_exp</td><td>$monster_skill</td><td>$monster_story</td></tr>";
          echo "<br>";
     }
 
@@ -38,5 +41,8 @@ $monster_level=$row['monster_level'];
  ?>
  </table>
    </div>
+     <input type="submit" class="btn btn-info btn-lg" onclick="location.href='addmonster.html'" value="增加怪物">
+     <input type="submit" class="btn btn-info btn-lg" onclick="location.href='deletermonster.php'" value="删除怪物">
+
  </body>
  </html>

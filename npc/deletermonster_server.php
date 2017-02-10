@@ -9,14 +9,13 @@ $conn=connectDb();
 
 
 $sql = "DELETE FROM monster WHERE idmonster='".$idmonster."'";
-echo "$idmonster";
-// if ($conn->query($sql) === TRUE) {
-//
-//  Header("Location:showallmonster.php");
-// } else {
-//     echo "Error: " . $sql . "<br>" . $conn->error;
-// }
-//
-// $conn->close();
-// }
+
+if ($conn->query($sql) === TRUE) {
+Header("Location:showallmonster.php");
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+
 ?>

@@ -19,10 +19,9 @@
 
       require_once("config.php");
       $conn=connectDb();
- echo "1";
 
-      $result =$conn->query("select ＊ from monster;");
 
+      $result =$conn->query("select idmonster,name from monster;");
       if ($result->num_rows> 0) {
              while($row = $result->fetch_assoc()) {
 
