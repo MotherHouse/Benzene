@@ -19,7 +19,7 @@
 
       require_once("config.php");
       $conn=connectDb();
-
+ echo "1";
 
       $result =$conn->query("select ＊ from monster;");
 
