@@ -8,9 +8,9 @@
   <head>
     <body>
       <div class="alert alert-success">
-      <h1>修改物品属性</h1>
+      <h1>战斗</h1>
       </div>
-      <label>选择你要修改的物品</label>
+      <label>你角色的状态</label>
       <label for="disabledSelect"></label>
       <select class="form-control" name="idgoods">
     <?php
@@ -20,7 +20,7 @@
       $conn=connectDb();
 
 
-      $result =$conn->query("select goodname from goods;");
+      $result =$conn->query("select user from goods;");
 
       if ($result->num_rows> 0) {
              while($row = $result->fetch_assoc()) {
