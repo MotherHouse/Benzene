@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#button1").click(function(){
+					$.ajax({
+						type:"GET",
+						url:"checkLogin.php",
+						dataType: "json",
+						data: {
+							username: $('#username').val(),
+							passwd: $('#passwd').val(),
+							checkCode:$("#checkCode").val()
+						},
+						success: function(data){
+							alert(data.message);
+						if(data.retcode==0)
+							window.location.href = 'success.html';
+						}
+					});
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<h1>登陆</h1>
+		
+		<form>
+			<p>
+				<label for="username">用户名：</label>
+				<input id="username" name="username" required placeholder="请填写用户名"></input>
+				<span style="height: 20px;width: 20px;" id="img1"></span>
+			</p>
+			<p>
+				<label for="passwd">密码：</label>
+				<input id="passwd" name="passwd" required type="password" placeholder="请填写密码"></input>
+			</p>
+			<p>
+				<label for="checkCode">验证码：</label>
+				<input id="checkCode" name="checkCode" required placeholder="请输入验证码"></input>
+				<img src="./captcha.php" onclick="javascript:this.src='./captcha.php?tm='+Math.random();" />
+			</p>
+			<p>
+				<input id="button1"  type="button" value="登陆"></input>
+			</p>
+		</form>
+	</body>
+</html>

@@ -17,32 +17,34 @@
     <div>
 
 <table class="table">
+<?php
+  echo "  <tr>";
+          echo " <th>power</th>";
+          echo " <td></td>";
+      echo " </tr>";
+      echo " <tr>";
+          echo " <th>soul</th>";
+          echo " <td>100</td>";
+      echo " </tr>";
+      echo " <tr>";
+          echo " <th>limit</th>";
+          echo " <td>1000/1000</td>";
+      echo " </tr>";
+      echo " <tr>";
+          echo " <th>defense</th>";
+          echo " <td>10</td>";
+      echo " </tr>";
+      echo " <tr>";
+          echo " <th>attack</th>";
+          echo " <td>10+5</td>";
+      echo " </tr>";
+      echo " <tr>";
+          echo " <th>level</th>";
+          echo " <td>1</td>";
+      echo " </tr>";
+      ?>
+  </table>
 
-    <tr>
-        <th>power</th>
-        <td></td>
-    </tr>
-    <tr>
-        <th>soul</th>
-        <td>100</td>
-    </tr>
-    <tr>
-        <th>limit</th>
-        <td>1000/1000</td>
-    </tr>
-    <tr>
-        <th>defense</th>
-        <td>10</td>
-    </tr>
-    <tr>
-        <th>attack</th>
-        <td>10+5</td>
-    </tr>
-    <tr>
-        <th>level</th>
-        <td>1</td>
-    </tr>
-</table>";
 </div>
 <h2>equipment</h2>
 </div>

@@ -38,7 +38,7 @@ while($row = $result->fetch_assoc()){
  else
  {
   $_SESSION['user']=$username; //创建SESSION
-  Header("Location:index.html");
+  Header("Location:index.php");
  }
 }
 }

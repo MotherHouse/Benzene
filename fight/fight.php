@@ -7,74 +7,134 @@
   <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <head>
     <body>
-      <div class="alert alert-success">
-      <h1>战斗</h1>
-      </div>
-      <label>你角色的状态</label>
-      <label for="disabledSelect"></label>
-      <select class="form-control" name="idgoods">
-    <?php
-    header("Content-type: text/html;charset=utf-8");
 
-      require_once("config.php");
-      $conn=connectDb();
+    <div class="alert alert-success">
+    <h1>战斗</h1>
+    </div>
+    <table class="table">
+<tr>
+        <th>
+    <div class="alert alert-info">
+    <h2>主角状态</h2>
+    </div>
+  </th>
+  <td>
+    <div class="alert alert-info">
+    <h2>敌人状态</h2>
+    </div>
+  </td>
+</tr>
+    <div>
+
+<table class="table">
+
+    <tr>
+        <th><table class="table">
+<?php
+require_once("config.php");
+$conn = connectDb();
+
+$result =$conn->query("select * from user where user_id=67");
+if ($result->num_rows> 0) {
+       while($row = $result->fetch_assoc()) {
+         $username=$row['username'];
+         $power=$row['power'];
+         $soul=$row['soul'];
+         $attack=$row['attack'];
+         $defence=$row['defence'];
+         $level=$row['level'];
+         echo "<tr>";
+         echo "<th>玩家姓名</th>";
+         echo "<td>$username</td>";
+         echo "</tr>";
+           echo "<tr>";
+           echo "<th>生命值</th>";
+           echo "<td>$power</td>";
+           echo "</tr>";
+           echo "<tr>";
+                echo "<th>法力值</th>";
+                echo "<td>$soul</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th>攻击力</th>";
+                echo "<td>$attack</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th>防御力</th>";
+                echo "<td>$defence</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th>等级</th>";
+                echo "<td>$level</td>";
+            echo "</tr>";
+
+        echo "</table>";
+      echo "</th>";
+        echo "<td>";
+
+ }
+}
+
+        ?>
 
 
-      $result =$conn->query("select user from goods;");
+          <table class="table">
+            <?php
+            require_once("config.php");
+            $conn = connectDb();
 
-      if ($result->num_rows> 0) {
-             while($row = $result->fetch_assoc()) {
+            $result =$conn->query("select * from monster where idmonster=26");
+            if ($result->num_rows> 0) {
+                   while($row = $result->fetch_assoc()) {
+                     $name=$row['name'];
+                     $life=$row['life'];
+                     $soul=$row['soul'];
+                     $monster_attack=$row['monster_attack'];
+                     $monster_defence=$row['monster_defence'];
+                     $monster_level=$row['monster_level'];
+                     $monster_exp=$row['monster_exp'];
+                     $monster_skill=$row['monster_skill'];
+                     $monster_story=$row['monster_story'];
+                echo "<tr>";
+                echo "<th>怪物名字</th>";
+                echo "<td>$name</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th>生命值</th>";
+                echo "<td>$life</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th>法力值</th>";
+                echo "<td>$soul</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th>攻击力</th>";
+                echo "<td>$monster_attack</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th>防御力</th>";
+                echo "<td>$monster_defence</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th>等级</th>";
+                echo "<td>$monster_level</td>";
+            echo "</tr>";
+        echo "</table>";
+      echo "</td>";
+    echo "</tr>";
+  }
+}
 
+    ?>
 
-      echo '<option value="'.$row['idgoods'].'">'.$row['goodname'].'</option>';
-
-
-      }
-    }
-
-      ?>
-        </select>
-
-
-
-          <form action="goodsupdata_server.php" method="post">
-          <label>物品名称</label>
-          <input class="form-control" name="goodname">
-          <p class="help-block"></p>
-          <label>价格</label>
-          <input class="form-control" name="price" >
-          <p class="help-block"></p>
-          <label>攻击</label>
-          <input class="form-control" name="attack" >
-          <p class="help-block"></p>
-          <label>防御</label>
-          <input class="form-control" name="defence" >
-          <p class="help-block"></p>
-          <label>穿透</label>
-          <input class="form-control" name="penetration" >
-          <p class="help-block"></p>
-
-
-
-
-      <label>适合的道</label>
-      <label for="disabledSelect"></label>
-      <select class="form-control" name="job">
-          <option value="天道">天道（群伤，治疗）</option>
-          <option value="阿修罗道">阿修罗道（爆发，控制）</option>
-          <option value="人道">人道（控制，解控）</option>
-          <option value="畜生道">畜生道（肉盾，辅助）</option>
-          <option value="饿鬼道">饿鬼道（吸血，再生）</option>
-          <option value="地狱道">地狱道（控制，群伤</option>）
-      </select>
-
-
-        <div class="panel-body">
-      <input type="submit" class="btn btn-info btn-lg" value="修改物品">
-        </div>
-      </form>
+</table>
 
 
-
-    </body>
+  </table>
+  <input type="submit" class="btn btn-info btn-lg" onclick="location.href='attack.php'" value="攻击">
+  <input type="submit" class="btn btn-info btn-lg" onclick="location.href='skill.php'"value="技能">
+  <input type="submit" class="btn btn-info btn-lg" onclick="location.href='goods.php'"value="物品">
+  <input type="submit" class="btn btn-info btn-lg" onclick="location.href='defence.php'"value="防御">
+  <input type="submit" class="btn btn-info btn-lg" onclick="location.href='flee.php'"value="逃走">
+</body>
 </html>
