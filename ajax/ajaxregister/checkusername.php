@@ -3,7 +3,7 @@ class Result{
 	public $retcode = 0;
 	public $message ='';
 	}
-	
+
 	$result = new Result();
 	$username = isset($_GET['username']) ? $_GET['username'] : NULL;
 if ($username == NULL) {
@@ -12,15 +12,15 @@ if ($username == NULL) {
 }
 else {
 	$dbms = 'mysql';
-	$host = 'localhost';
-	$dbName = 'news';
-	$user = 'root';
-	$pass = 'root';
+	$host = '139.199.164.15';
+	$dbName = 'game';
+	$user = 'bob';
+	$pass = 'Zheng1@06';
 	$dsn = "$dbms:host=$host;dbname=$dbName";
 	try{
 		$dbh = new PDO($dsn, $user, $pass);
 		$dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$query = "SELECT * FROM UserInfo WHERE username= '". $username ."'";
+$query = "SELECT * FROM userinfo WHERE username= '". $username ."'";
 		if ($dbh -> query($query) -> rowCount() > 0){
 			$result -> retcode = -3;
 			$result -> message = '用户名已存在，请换一个用户名：';
@@ -31,7 +31,7 @@ $query = "SELECT * FROM UserInfo WHERE username= '". $username ."'";
 		$dbh = NULL;
 		} catch(PDOException $e) {
 			$result -> retcode = -2;
-			$result -> message = '保存到数据库中失效' . $e -> getMessage();		
+			$result -> message = '保存到数据库中失效' . $e -> getMessage();
 		}
    }
    echo json_encode($result);
