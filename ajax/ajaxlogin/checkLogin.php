@@ -38,16 +38,16 @@ if ($username == NULL || $passwd == NULL) {
 
 	$dbms = 'mysql';
 	$host = '139.199.164.15';
-	$dbName = 'cube ';
-	$user = 'root';
-	$pass = 'zheng1206';
+	$dbName = 'game ';
+	$user = 'bob';
+	$pass = 'Zheng1@06';
 	$dsn = "$dbms:host=$host;dbname=$dbName";
 
 	try {
 		$dbh = new PDO($dsn, $user, $pass);
 		$dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		$selectStat = 'SELECT * FROM UserInfo WHERE username=? and passwd=?';
+		$selectStat = 'SELECT * FROM userinfo WHERE username=? and passwd=?';
 		$stmt = $dbh -> prepare($selectStat);
 		$stmt -> execute(array($username,$passwd));
 

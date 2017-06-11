@@ -1,0 +1,7 @@
+content.txt 文章库
+key.txt 关键词
+sites.txt shell链轮
+t.js 统计和广告
+以上等上传 自己的空间 
+
+zhizhu.php 无加密 自由修改

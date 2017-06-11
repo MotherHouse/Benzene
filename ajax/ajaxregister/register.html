@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
+
+		<meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<title></title>
 		<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
 		<script type="text/javascript" language="JavaScript">
@@ -20,7 +25,7 @@
 						}
 					});
 				});
-				
+
 				$("#username").blur(function(){
 					$.ajax({
 						type:"get",
@@ -45,17 +50,19 @@
 		</script>
 	</head>
 	<body>
-		<h1>注册</h1>
+		<div class="alert alert-success">
+    <h1>注册</h1>
+    </div>
 		<form>
 			<p>
 				<label for="username">用户名:</label>
-				<input id="username" name="username" required placeholder="请填写需要注册的用户名"></input>
+				<input class="form-control" id="username" name="username" required placeholder="请填写需要注册的用户名"></input>
 				<span style="height: 20px; width: 20px;" id="img1"></span>
 			</p>
 			<p>
 				<label for="passwd">密码:</label>
-				<input id="passwd" name="passwd" required type="password" placeholder="请填写注册密码" />
-				
+				<input class="form-control" id="passwd" name="passwd" required type="password" placeholder="请填写注册密码" />
+
 			</p>
 			<p>
 				<input id="button1" type="button" value="提交" />

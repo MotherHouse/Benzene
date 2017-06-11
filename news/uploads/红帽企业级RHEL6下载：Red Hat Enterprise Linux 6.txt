@@ -1,0 +1,20 @@
+红帽企业级Linux RHEL 6下载（Red Hat Enterprise Linux 6）
+http://www.51chongdian.net/bbs/thread-25269-1-1.html
+
+红帽企业级Linux RHEL 6下载（Red Hat Enterprise Linux 6）
+红帽发布了其企业级Linux，RHEL 6的正式版Red Hat Enterprise Linux。
+“红帽RHEL 6是10年研发和合作的结晶”，红帽产品和技术部总裁Paul Cormier在发布会现场如是说。Cormier将这个操作系统看作是云部署的基础单元，以及Windows Server的潜在替代品。“我们想要让Linux在每一个IT单位里应用的更加深入。这是一个取代微软服务器环境的极佳产品。”总的来说，RHEL 6包含了超过2000个包，相对之前的版本而言增加了85%的代码量，一共增添了1800个新特性，解决了14000多个bug。
+
+Linux 标准。 面向企业、政府或寻求具有支持且通过认证的稳定的 Linux 其他用户。 最低支付 80 美元便可立即下载。
+
+30天试用下载地址,下载需要登录redhat,然后通过邮件获取下载地址
+https://engage.redhat.com/forms/red-hat-linux-evaluation
+https://access.redhat.com/downloads/
+
+rhel6下载，RHEL6下载，Red Hat Enterprise Linux 6 下载，red hat enterprise linux 6 下载
+本人从官方网站下载了RHEL6，在此提供下载，希望对大家有所帮助：
+
+下载地址：http://zs.kan115.com:8080/rhel-server-6.0-x86_64-dvd.iso
+MD5: f7141396c6a19399d63e8c195354317d 
+SHA-1: 4391526d756703d55fe0fcd63f82a767492c0d79 
+SHA-256: a6fef01cb4d790975a11479018785bfe4e04b9bdeaea8be24c8a4055f98d127e

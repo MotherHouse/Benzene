@@ -12,7 +12,7 @@ class ValidateCode {
  private $fontcolor;//指定字体颜色
  //构造方法初始化
  public function __construct() {
- $this->font = dirname(__FILE__).'/font/elephant.ttf';//注意字体路径要写对，否则显示不了图片
+ $this->font = dirname(__FILE__).'/font/Elephant.ttf';//注意字体路径要写对，否则显示不了图片
  }
  //生成随机码
  private function createCode() {

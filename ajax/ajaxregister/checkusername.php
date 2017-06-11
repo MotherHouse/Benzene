@@ -21,6 +21,8 @@ else {
 		$dbh = new PDO($dsn, $user, $pass);
 		$dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $query = "SELECT * FROM userinfo WHERE username= '". $username ."'";
+
+
 		if ($dbh -> query($query) -> rowCount() > 0){
 			$result -> retcode = -3;
 			$result -> message = '用户名已存在，请换一个用户名：';
