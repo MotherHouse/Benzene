@@ -1,16 +1,9 @@
-<?php
-include_once("functions/is_login.php");
-if (!session_id()){//这里使用session_id()判断是否已经开启了Session
-	session_start();
-}
-if(!is_login()){
-	echo "请您登录系统后，再访问该页面！";
-	return;
-}
-?>
+<html>
+<head>
+</head>
 <form action="news_save.php" method="post" enctype="multipart/form-data">
 标题：	<input type="text"  size="60" name="title"><br/>
-内容：	
+内容：
 <?php
 include("fckeditor/fckeditor.php");//载入FCKeditor类文件
 $oFCKeditor = new FCKeditor('content');  // 创建名称为content在线编辑器，实例名为$oFCKeditor
@@ -23,7 +16,7 @@ $oFCKeditor->Config['EnterMode'] = 'br';//设置FCKeditor实例的额外配置
 $oFCKeditor->Create() ; //显示在线编辑器的HTML代码
 ?>
 <br/>
-类别：	
+类别：
 <select name="category_id" size="1">
 <?php
 include_once("functions/database.php");

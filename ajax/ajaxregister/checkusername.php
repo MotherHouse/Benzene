@@ -8,11 +8,11 @@ class Result{
 	$username = isset($_GET['username']) ? $_GET['username'] : NULL;
 if ($username == NULL) {
 	$result -> retcode = -1;
-	$result -> message = 'æ³¨å†Œç”¨æˆ·åä¸èƒ½ä¸ºç©º';
+	$result -> message = '×¢²áÓÃ»§Ãû²»ÄÜÎª¿Õ';
 }
 else {
 	$dbms = 'mysql';
-	$host = '139.199.164.15';
+	$host = '';
 	$dbName = 'game';
 	$user = 'bob';
 	$pass = 'Zheng1@06';
@@ -25,15 +25,15 @@ $query = "SELECT * FROM userinfo WHERE username= '". $username ."'";
 
 		if ($dbh -> query($query) -> rowCount() > 0){
 			$result -> retcode = -3;
-			$result -> message = 'ç”¨æˆ·åå·²å­˜åœ¨ï¼Œè¯·æ¢ä¸€ä¸ªç”¨æˆ·åï¼š';
+			$result -> message = 'ÓÃ»§ÃûÒÑ´æÔÚ£¬Çë»»Ò»¸öÓÃ»§Ãû£º';
 		}else{
 			$result -> retcode = 0;
-			$result -> message = 'æ³¨å†Œç”¨æˆ·åå¯ä»¥ä½¿ç”¨ï¼š';
+			$result -> message = '×¢²áÓÃ»§Ãû¿ÉÒÔÊ¹ÓÃ£º';
 		}
 		$dbh = NULL;
 		} catch(PDOException $e) {
 			$result -> retcode = -2;
-			$result -> message = 'ä¿å­˜åˆ°æ•°æ®åº“ä¸­å¤±æ•ˆ' . $e -> getMessage();
+			$result -> message = '±£´æµ½Êý¾Ý¿âÖÐÊ§Ð§' . $e -> getMessage();
 		}
    }
    echo json_encode($result);

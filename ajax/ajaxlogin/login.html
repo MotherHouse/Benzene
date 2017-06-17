@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
 		<script type="text/javascript">
 			$(function(){
@@ -27,25 +28,27 @@
 		</script>
 	</head>
 	<body>
-		<h1>ç™»é™†</h1>
-		
+		<div class="alert alert-success">
+    <h1>µÇÂ½</h1>
+    </div>
+
 		<form>
+			<div class="form-group">
+	    <label for="exampleInputEmail1">ÓÃ»§Ãû</label>
+	    <input type="email" class="form-control"  name="username"  placeholder="ÇëÊäÈëÓÃ»§Ãû">
+	  </div>
+
+		<div class="form-group">
+		<label for="exampleInputEmail1">ÃÜÂë</label>
+		<input type="email" class="form-control"  name="passwd"  placeholder="ÇëÊäÈëÃÜÂë">
+	</div>
 			<p>
-				<label for="username">ç”¨æˆ·åï¼š</label>
-				<input id="username" name="username" required placeholder="è¯·å¡«å†™ç”¨æˆ·å"></input>
-				<span style="height: 20px;width: 20px;" id="img1"></span>
-			</p>
-			<p>
-				<label for="passwd">å¯†ç ï¼š</label>
-				<input id="passwd" name="passwd" required type="password" placeholder="è¯·å¡«å†™å¯†ç "></input>
-			</p>
-			<p>
-				<label for="checkCode">éªŒè¯ç ï¼š</label>
-				<input id="checkCode" name="checkCode" required placeholder="è¯·è¾“å…¥éªŒè¯ç "></input>
+				<label for="checkCode">ÑéÖ¤Âë£º</label>
+				<input id="checkCode" name="checkCode" required placeholder="ÇëÊäÈëÑéÖ¤Âë"></input>
 				<img src="./captcha.php" onclick="javascript:this.src='./captcha.php?tm='+Math.random();" />
 			</p>
 			<p>
-				<input id="button1"  type="button" value="ç™»é™†"></input>
+				<input id="button1"  type="button" value="µÇÂ½"></input>
 			</p>
 		</form>
 	</body>
