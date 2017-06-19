@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>二当家的新闻管理系统</title>
+    <title>新闻管理系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script type="text/javascript">
 			function dodel(id){
@@ -8,13 +8,13 @@
 					window.location="action.php?action=del&id="+id;
 				}
 			}
-		
+
 		</script>
 	</head>
 	<body>
 		<center>
 			<?php include("menu.php"); //导入导航栏 ?>
-			
+
 			<h3>搜索新闻</h3>
 			<!-----搜索表单--------->
 				<form action="list1.php" method="get">
@@ -35,7 +35,7 @@
 					//=============================
 					//封装搜索信息
 					$wherelist = array();//定义一个封装搜索条件的数组变量
-					
+
 					//判断新闻标题是否有值，若有则封装此搜索条件
 					if(!empty($_GET["title"])){
 						$wherelist[]="title like '%{$_GET['title']}%'";
@@ -54,18 +54,18 @@
 					}
 					//echo $where;
 					//=============================
-					
+
 					//1.导入配置文件
 						require("dbconfig.php");
-						
+
 					//2.连接MySQL，选择数据库
-						$link = @mysql_connect(HOST,USER,PASS) or die("数据库连接失败！");
+						$link = mysqli_connect(HOST,USER,PASS) or die("数据库连接失败！");
 						mysql_select_db(DBNAME,$link);
-						
+
 					//3. 执行查询，并返回结果集
-						@$sql = "select * from news {$where} order by addtime desc";
+						$sql = "select * from news {$where} order by addtime desc";
 						$result = mysql_query($sql,$link);
-						
+
 					//4. 解析结果集,并遍历输出
 						while($row = mysql_fetch_assoc($result)){
 							echo "<tr>";

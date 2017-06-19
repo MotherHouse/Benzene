@@ -5,20 +5,20 @@
 	</head>
 	<body>
 		<center>
-			<?php 
-				include("menu.php"); //导入导航栏 
-				
+			<?php
+				include("menu.php"); //导入导航栏
+
 				//1. 导入配置文件
 					require("dbconfig.php");
-					
+
 				//2. 连接MySQL、选择数据库
-					$link = @mysql_connect(HOST,USER,PASS) or die("数据库连接失败！");
+					$link = mysqli_connect(HOST,USER,PASS) or die("数据库连接失败！");
 					mysql_select_db(DBNAME,$link);
-					
+
 				//3. 获取要修改信息的id号，并拼装查看sql语句，执行查询，获取要修改的信息
 					$sql = "select * from news where id={$_GET['id']}";
 					$result = mysql_query($sql,$link);
-					
+
 				//4. 判断是否获取到了要修改的信息
 					if($result && mysql_num_rows($result)>0){
 						$news = mysql_fetch_assoc($result);
@@ -26,7 +26,7 @@
 						die("没有找到要修改的信息！");
 					}
 			?>
-			
+
 			<h3>编辑新闻</h3>
 			<form action="action.php?action=update" method="post">
 				<input type="hidden" name="id" value="<?php echo $news['id']; ?>"/>

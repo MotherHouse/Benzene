@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>二当家的新闻管理系统</title>
+		<title>新闻管理系统</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script type="text/javascript">
 			function dodel(id){
@@ -8,13 +8,13 @@
 					window.location="action.php?action=del&id="+id;
 				}
 			}
-		
+
 		</script>
 	</head>
 	<body>
 		<center>
 			<?php include("menu.php"); //导入导航栏 ?>
-			
+
 			<h3>浏览新闻</h3>
 			<table width="880" border="1">
 				<tr>
@@ -25,15 +25,15 @@
 				<?php
 					//1.导入配置文件
 						require("dbconfig.php");
-						
+
 					//2.连接MySQL，选择数据库
 						$link = @mysql_connect(HOST,USER,PASS) or die("数据库连接失败！");
 						mysql_select_db(DBNAME,$link);
-						
+
 					//3. 执行查询，并返回结果集
 						$sql = "select * from news order by addtime desc";
 						$result = mysql_query($sql,$link);
-						
+
 					//4. 解析结果集,并遍历输出
 						while($row = mysql_fetch_assoc($result)){
 							echo "<tr>";
