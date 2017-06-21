@@ -1,12 +1,12 @@
 <html>
 	<head>
-		<title>新闻管理系统</title>
+		<title>winmine新闻管理系统</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 	<body>
 		<center>
 			<?php include("menu.php"); //导入导航栏 ?>
-			
+
 			<h3>发布新闻</h3>
 			<form action="action.php?action=add" method="post">
 				<table width="320" border="0">

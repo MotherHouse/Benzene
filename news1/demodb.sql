@@ -1,17 +1,4 @@
-/*
-Navicat MySQL Data Transfer
 
-Source Server         : eryun
-Source Server Version : 50622
-Source Host           : 112.124.109.87:3306
-Source Database       : demodb
-
-Target Server Type    : MYSQL
-Target Server Version : 50622
-File Encoding         : 65001
-
-Date: 2016-09-26 15:35:28
-*/
 
 SET FOREIGN_KEY_CHECKS=0;
 
@@ -34,8 +21,6 @@ CREATE TABLE `goods` (
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-INSERT INTO `goods` VALUES ('7', 'iPhone 7', '1', '5890.00', '1000', '201609260942297599.png', '拍照非常好', '1474854149');
-INSERT INTO `goods` VALUES ('5', 'MacBook Pro', '1', '9680.00', '11', '201609260333188393.jpg', '最新的TouchBar很酷', '1474831998');
 
 -- ----------------------------
 -- Table structure for news
@@ -54,13 +39,7 @@ CREATE TABLE `news` (
 -- ----------------------------
 -- Records of news
 -- ----------------------------
-INSERT INTO `news` VALUES ('1', '做一个善良的人', 'Happiness', 'winmine', '1474873680', '做一个善良的人做一个善良的人做一个善良的人做一个善良的人做一个善良的人做一个善良的人');
-INSERT INTO `news` VALUES ('2', '停止空谈、马上行动。', 'Hackathon', 'winmine', '1474873694', '做一个善良的人');
-INSERT INTO `news` VALUES ('3', '珠海高校联赛', 'cube', 'winmine', '1474873697', '做一个善良的人');
-INSERT INTO `news` VALUES ('4', '佛山魔方公开赛', 'cube', 'winmine', '1474873699', '做一个善良的人');
-INSERT INTO `news` VALUES ('5', '香港公开赛', 'cube', 'winmine', '1474873701', '做一个善良的人');
-INSERT INTO `news` VALUES ('6', '庙湾露营', 'Hike', 'Bob Zheng', '1474873893', '做一个善良的人');
-INSERT INTO `news` VALUES ('7', '狮子头穿越', 'Hike', 'Bob Zheng', '1474873895', '做一个善良的人');
+
 
 -- ----------------------------
 -- Table structure for type

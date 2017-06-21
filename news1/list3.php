@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>新闻管理系统</title>
+    <title>winmine的新闻管理系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script type="text/javascript">
 			function dodel(id){
@@ -66,7 +66,7 @@
 						require("dbconfig.php");
 
 					//2.连接MySQL，选择数据库
-						$link = mysqli_connect(HOST,USER,PASS) or die("数据库连接失败！");
+						$link = @mysql_connect(HOST,USER,PASS) or die("数据库连接失败！");
 						mysql_select_db(DBNAME,$link);
 
 					//2.1 插入分页处理代码
@@ -78,7 +78,7 @@
 						$maxPages;		//最大页数
 
 						//2. 获取最大数据条数
-						$sql = "select count(*) from news {$where}";
+						@$sql = "select count(*) from news {$where}";
 						$res = mysql_query($sql,$link);
 						$maxRows = mysql_result($res,0,0); //定位从结果集中获取总数据条数这个值。
 						//3. 计算出共计最大页数
@@ -97,8 +97,8 @@
 					//======================================
 
 					//3. 执行查询，并返回结果集
-						$sql = "select * from news {$where} order by addtime asc {$limit}";
-						$result = mysql_query($sql,$link);
+						@$sql = "select * from news {$where} order by addtime asc {$limit}";
+						@$result = mysql_query($sql,$link);
 
 					//4. 解析结果集,并遍历输出
 						while($row = mysql_fetch_assoc($result)){

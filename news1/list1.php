@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>新闻管理系统</title>
+    <title>winmine的新闻管理系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script type="text/javascript">
 			function dodel(id){
@@ -59,11 +59,11 @@
 						require("dbconfig.php");
 
 					//2.连接MySQL，选择数据库
-						$link = mysqli_connect(HOST,USER,PASS) or die("数据库连接失败！");
+						$link = @mysql_connect(HOST,USER,PASS) or die("数据库连接失败！");
 						mysql_select_db(DBNAME,$link);
 
 					//3. 执行查询，并返回结果集
-						$sql = "select * from news {$where} order by addtime desc";
+						@$sql = "select * from news {$where} order by addtime desc";
 						$result = mysql_query($sql,$link);
 
 					//4. 解析结果集,并遍历输出
