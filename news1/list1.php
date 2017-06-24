@@ -2,6 +2,7 @@
 <head>
     <title>winmine的新闻管理系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <link rel="stylesheet" href="css/bootstrap.css">
 		<script type="text/javascript">
 			function dodel(id){
 				if(confirm("确定要删除吗？")){
@@ -25,12 +26,12 @@
 					<input type="button" value="全部信息" onclick="window.location='list1.php'"/>
 				</form>
 			<!-------------->
-			<table width="880" border="1">
-				<tr>
-					<th>新闻id</th><th>新闻标题</th><th>关键字</th>
-					<th>作者</th><th>发布时间</th><th>新闻内容</th>
-					<th>操作</th>
-				</tr>
+      <table class="table table-bordered">
+      				<tr>
+      					<td class="success">新闻id</td><td class="success">新闻标题</td><td class="success">关键字</td>
+      					<td class="success">作者</td><td class="success">发布时间</td><td class="success">新闻内容</td>
+      					<td class="success">操作</td>
+      				</tr>
 				<?php
 					//=============================
 					//封装搜索信息

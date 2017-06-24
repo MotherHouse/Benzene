@@ -29,7 +29,7 @@ DROP TABLE IF EXISTS `news`;
 CREATE TABLE `news` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(64) NOT NULL,
-  `keywords` varchar(64) NOT NULL,
+  `keywords` varchar(64) NOT NULL,--
   `author` varchar(16) NOT NULL,
   `addtime` int(10) unsigned NOT NULL,
   `content` text NOT NULL,

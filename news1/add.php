@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>winmine新闻管理系统</title>
+		  <link rel="stylesheet" href="css/bootstrap.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 	<body>
@@ -23,8 +24,18 @@
 						<td><input type="text" name="author"/></td>
 					</tr>
 					<tr>
-						<td align="right" valign="top">内容:</td>
-						<td><textarea cols="25" rows="5" name="content"></textarea></td>
+						<?php
+						include("fckeditor/fckeditor.php");
+						$oFCKeditor = new FCKeditor('content');
+						$oFCKeditor->BasePath = 'fckeditor/';
+						$oFCKeditor->Width = 550;
+						$oFCKeditor->Height = 350;
+						$oFCKeditor->Value = "";
+						$oFCKeditor->ToolbarSet = "Default";
+						$oFCKeditor->Config['EnterMode'] = 'br';
+						$oFCKeditor->Create() ;
+						?>
+
 					</tr>
 					<tr>
 						<td colspan="2" align="center">
