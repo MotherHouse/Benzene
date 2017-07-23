@@ -1,0 +1,25 @@
+{
+  "name": "arnapou-jqcron",
+  "authors": [
+    "Arnaud Buathier <arnaud@arnapou.net>"
+  ],
+  "description": "Cron jQuery plugin",
+  "license": "MIT",
+  "homepage": "https://github.com/arnapou/jqcron",
+  "ignore": [
+    "*",
+    "!src/*"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  },
+  "_release": "a3cf5dc698",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a3cf5dc6982066aa2ff3175b51a15200dbe7bc74"
+  },
+  "_source": "https://github.com/karsonzhang/jqcron.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/karsonzhang/jqcron.git"
+}
