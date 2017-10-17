@@ -3,12 +3,7 @@
   //包含外部文件
   include './Common/header.php';
 
-  //1.连接数据库
-  $link = mysqli_connect('localhost','root','') or die('连接数据库失败');
-  //2.选择数据库
-  mysqli_select_db($link,'myblog') or die('选择数据库失败');
-  //3.设置字符集
-  mysqli_set_charset($link,'utf8');
+  require_once("connectdb.php");
   //4.准备sql语句
   $sql = "select * from posts order by id desc";
   //5.发送并且执行sql语句
@@ -74,7 +69,7 @@
     </section>
     </aside>
     <div class="clearfix"></div></div>
-<?php  
+<?php
   //包含外部文件
   include './Common/footer.php';
 ?>

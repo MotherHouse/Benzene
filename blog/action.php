@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require_once './loginclass/class.geetestlib.php';
 	header("content-type:text/html;charset=utf-8");
 	session_start();
@@ -41,13 +41,7 @@
 					echo "</script>";
 					exit();
 				}
-				//2.2验证用户的邮箱地址是否重复，已经存在。
-					//2.2.1连接数据库
-					$link = mysqli_connect('localhost','root','') or die('数据库连接失败');
-					//2.2.2选择数据库
-					mysqli_select_db($link,'myblog') or die('数据库选择失败');
-					//2.2.3设置字符集
-					mysqli_set_charset($link,'utf8');
+				require_once("connectdb.php");
 					//2.2.4准备sql语句
 					$sql = "select * from user where email = '$email'";
 					//2.2.5发送并且执行sql语句,返回的是一个结果集
@@ -131,7 +125,7 @@
 						echo "window.history.back()";
 						echo "</script>";
 						exit();
-				    } 
+				    }
 
 				} else {
 			   			//输出异常提示信息
@@ -143,7 +137,7 @@
 						echo 'window.history.back()';
 						echo '</script>';
 						exit();
-					    } 
+					    }
 
 			}else{  //服务器宕机,走failback模式
 			    if (!empty($_POST['geetest_challenge']) && !empty($_POST['geetest_validate']) && !empty($_POST['geetest_seccode'])) {
@@ -170,7 +164,7 @@
 					echo 'window.history.back()';
 					echo '</script>';
 					exit();
-					} 
+					}
 			}
 			//2.验证是否真实
 				//2.1 连接数据库
@@ -343,7 +337,7 @@
 				//1.3获取时间
 				$time = time();
 				//1.4获取当前登录的用户ID
-				$userid = $_SESSION['userInfo']['id']; 
+				$userid = $_SESSION['userInfo']['id'];
 				//1.5接收文章所属ID
 				$id = $_POST['id'];
 

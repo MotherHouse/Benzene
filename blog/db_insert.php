@@ -1,7 +1,7 @@
 <?php
 	//PHP操作Mysql数据库
 	//1.连接数据库  mysqli_connect(数据库地址，用户名，密码(可选))	连接成功会返回一个数据库资源文件
-		$link = mysqli_connect('localhost','root','') or die('数据库连接失败');
+		$link = mysqli_connect('139.199.164.15','root','Zheng1@06') or die('数据库连接失败');
 
 
 		// echo "<pre>";

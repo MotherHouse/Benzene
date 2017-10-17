@@ -14,12 +14,7 @@
           exit();
       }
 
-  //1.连接数据库
-  $link = mysqli_connect('localhost','root','') or die('数据库连接失败');
-  //2.选择数据库
-  mysqli_select_db($link,'myblog') or die('数据库选择失败');
-  //3.设置字符集
-  mysqli_set_charset($link,'utf8');
+include_once'connectdb.php';
   //4.准备sql语句
   $sql = "select * from posts where id = $id";
   //5.执行sql语句

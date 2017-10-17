@@ -3,13 +3,8 @@
   //获取搜索关键字
   $keyword = $_GET['q'];
   // echo $keyword;exit;
-  //1.连接数据库
-  $link = mysqli_connect('localhost', 'root', '') or die('数据库连接失败');
-  //2.选择数据库
-  mysqli_select_db($link, 'myblog') or die('数据库选择失败');
-  //3.设置字符集
-  mysqli_set_charset($link, 'utf8');
-  //4.准备sql语句  like 模糊搜索 
+require_once("connectdb.php");
+  //4.准备sql语句  like 模糊搜索
   $sql = "select * from posts where title like '%$keyword%'order by id desc";
   //5.发送并且执行sql语句
   $result = mysqli_query($link, $sql);
@@ -59,10 +54,10 @@
     <a href="http://www.3maio.com" target="_blank">Cpphp</a>
   </div>
 </section>
-  
+
 </aside>
     <div class="clearfix"></div>
   </div>
 <?php
   include './Common/footer.php';
-?> 
+?>
